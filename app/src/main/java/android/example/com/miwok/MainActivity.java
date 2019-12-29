@@ -13,12 +13,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NumbersClickListener clickListener = new NumbersClickListener();
-
         // Find the View that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.numbers);
 
         // Set a clicklistener on that View
-        numbers.setOnClickListener(clickListener);
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a new intent to open the {@link NumberActivity}
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+
+                // Start the new activity
+                startActivity(numbersIntent);
+            }
+        });
     }
 }
