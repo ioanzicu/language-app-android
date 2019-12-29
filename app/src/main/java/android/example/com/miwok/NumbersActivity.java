@@ -28,23 +28,19 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Find LinearLayout with the id "rootView"
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-        // Create TextView element
-        TextView wordView = new TextView(this);
-        // Set view text
-        wordView.setText(words.get(0));
-        // Append child view to the root view
-        rootView.addView(wordView);
 
-        TextView wordView2 = new TextView(this);
-        // Set view text
-        wordView2.setText(words.get(1));
-        // Append child view to the root view
-        rootView.addView(wordView2);
+        int index = 0;
 
-        TextView wordView3 = new TextView(this);
-        // Set view text
-        wordView3.setText(words.get(2));
-        // Append child view to the root view
-        rootView.addView(wordView3);
+        while(index < words.size()) {
+            // Create TextView element
+            TextView wordView = new TextView(this);
+            // Set view text
+            wordView.setText(words.get(index));
+            // Append child view to the root view
+            rootView.addView(wordView);
+
+            index++;
+        }
+
     }
 }
