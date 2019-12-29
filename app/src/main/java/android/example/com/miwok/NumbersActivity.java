@@ -41,7 +41,6 @@ public class NumbersActivity extends AppCompatActivity {
         // activity_numbers.xml layout file.
         ListView listView = (ListView) findViewById(R.id.list);
 
-
         // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
         // {@link ListView} will display list items for each word in the list of words.
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
