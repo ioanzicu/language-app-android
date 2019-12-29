@@ -1,6 +1,8 @@
 package android.example.com.miwok;
 
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -24,16 +26,25 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        Log.i("NumbersActivity", words.get(0));
-        Log.i("NumbersActivity", words.get(1));
-        Log.i("NumbersActivity", words.get(2));
-        Log.i("NumbersActivity", words.get(3));
-        Log.i("NumbersActivity", words.get(4));
-        Log.i("NumbersActivity", words.get(5));
-        Log.i("NumbersActivity", words.get(6));
-        Log.i("NumbersActivity", words.get(7));
-        Log.i("NumbersActivity", words.get(8));
-        Log.i("NumbersActivity", words.get(9));
+        // Find LinearLayout with the id "rootView"
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // Create TextView element
+        TextView wordView = new TextView(this);
+        // Set view text
+        wordView.setText(words.get(0));
+        // Append child view to the root view
+        rootView.addView(wordView);
 
+        TextView wordView2 = new TextView(this);
+        // Set view text
+        wordView2.setText(words.get(1));
+        // Append child view to the root view
+        rootView.addView(wordView2);
+
+        TextView wordView3 = new TextView(this);
+        // Set view text
+        wordView3.setText(words.get(2));
+        // Append child view to the root view
+        rootView.addView(wordView3);
     }
 }
