@@ -3,7 +3,7 @@ package android.example.com.miwok;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class FamilyMembersActivity extends AppCompatActivity {
+public class FamilyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
