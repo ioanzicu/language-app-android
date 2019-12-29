@@ -29,17 +29,13 @@ public class NumbersActivity extends AppCompatActivity {
         // Find LinearLayout with the id "rootView"
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        int index = 0;
-
-        while(index < words.size()) {
+        for(int index = 0; index < words.size(); index++) {
             // Create TextView element
             TextView wordView = new TextView(this);
             // Set view text
             wordView.setText(words.get(index));
             // Append child view to the root view
             rootView.addView(wordView);
-
-            index++;
         }
 
     }
