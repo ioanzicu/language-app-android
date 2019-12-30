@@ -1,10 +1,10 @@
 package android.example.com.miwok;
 
-public class Word {
+public class Color {
     private String mMiwokTranslation = "";
     private String mDefaultTranslation = "";
 
-    public Word(String miwokTranslation, String defaultTranslation){
+    public Color(String miwokTranslation, String defaultTranslation){
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
     }
