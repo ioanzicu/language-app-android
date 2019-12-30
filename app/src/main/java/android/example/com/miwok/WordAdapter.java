@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -46,22 +45,29 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with ID miwok_text_view
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
+        TextView nameTextView = listItemView.findViewById(R.id.miwok_text_view);
         // Get the miwok translation from the current WordAdapter object and
         // set this text on the name TextView
         nameTextView.setText(currentWord.getmMiwokTranslation());
 
         // Find the TextView in the list_item.xml layout with the ID default_text_view
-        TextView numberTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
+        TextView numberTextView = listItemView.findViewById(R.id.default_text_view);
         // Get the default translation from the current WordAdapter object and
         // set this text on the number TextView
         numberTextView.setText(currentWord.getmDefaultTranslation());
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-        ImageView iconView = (ImageView) listItemView.findViewById(R.id.image);
-        // Get the image resource ID from the current AndroidFlavor object and
-        // set the image to iconView
-        iconView.setImageResource(currentWord.getImageResourceID());
+        ImageView imageView = listItemView.findViewById(R.id.image);
+        if (currentWord.hasImage()) {
+            // Set the ImageView to the image resource specified in the current word
+            imageView.setImageResource(currentWord.getImageResourceID());
+
+            // Make sure the view is visible
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            // Hide the ImageView set visibility (View.GONE)
+            imageView.setVisibility(View.GONE);
+        }
 
         // Return the whole list item layout (containing 2 TextViews and one Image)
         // so that it can be shown in the ListView
