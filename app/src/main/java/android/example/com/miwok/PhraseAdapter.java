@@ -11,21 +11,21 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class FamilyAdapter extends ArrayAdapter {
+public class PhraseAdapter extends ArrayAdapter {
 
     /**
      * The context is used to inflate the layout file, and the list is the data we want
      * to populate into the lists.
      *
      * @param context The current context. Used to inflate the layout file.
-     * @param familyFamilyMembers   A List of Family objects to display in a list
+     * @param phrases A List of Word objects to display in a list
      */
-    public FamilyAdapter(Activity context, ArrayList<FamilyMember> familyFamilyMembers) {
+    public PhraseAdapter(Activity context, ArrayList<Phrase> phrases) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
-        // the second argument is used when the FamilyAdapter is populating a single TextView.
+        // the second argument is used when the PhraseAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
-        super(context, 0, familyFamilyMembers);
+        super(context, 0, phrases);
     }
 
     @NonNull
@@ -41,19 +41,19 @@ public class FamilyAdapter extends ArrayAdapter {
         }
 
         // Get the {@link Word} object located at this position in the list
-        FamilyMember currenFamilyMember = (FamilyMember) getItem(position);
+        Phrase currentWord = (Phrase) getItem(position);
 
         // Find the TextView in the list_item.xml layout with ID miwok_text_view
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
-        // Get the miwok translation from the current FamilyAdapter object and
+        // Get the miwok translation from the current PhraseAdapter object and
         // set this text on the name TextView
-        nameTextView.setText(currenFamilyMember.getmMiwokTranslation());
+        nameTextView.setText(currentWord.getmMiwokTranslation());
 
         // Find the TextView in the list_item.xml layout with the ID default_text_view
         TextView numberTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
-        // Get the default translation from the current FamilyAdapter object and
+        // Get the default translation from the current PhraseAdapter object and
         // set this text on the number TextView
-        numberTextView.setText(currenFamilyMember.getmDefaultTranslation());
+        numberTextView.setText(currentWord.getmDefaultTranslation());
 
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
