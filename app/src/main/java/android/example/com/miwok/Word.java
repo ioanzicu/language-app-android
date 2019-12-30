@@ -1,24 +1,26 @@
 package android.example.com.miwok;
 
+import androidx.annotation.NonNull;
+
 public class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
-    private int mImageResourceID = NO_IMAGE_PROVIDED;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
-    private int mSoundResourceID;
+    private int mAudioResourceId;
 
     public Word(String defaultTranslation, String miwokTranslation, int soundResourceID) {
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
-        this.mSoundResourceID = soundResourceID;
+        this.mAudioResourceId = soundResourceID;
     }
 
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int soundResourceID) {
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
-        this.mImageResourceID = imageResourceID;
-        this.mSoundResourceID = soundResourceID;
+        this.mImageResourceId = imageResourceID;
+        this.mAudioResourceId = soundResourceID;
     }
 
     public String getmMiwokTranslation() {
@@ -29,14 +31,32 @@ public class Word {
         return mDefaultTranslation;
     }
 
-    public int getImageResourceID() { return mImageResourceID; }
+    public int getImageResourceID() {
+        return mImageResourceId;
+    }
 
-    public int getmSoundResourceID () {return mSoundResourceID; }
+    public int getmAudioResourceId() {
+        return mAudioResourceId;
+    }
 
     /**
      * Returns whether or not there is an image for this word
      */
     public boolean hasImage() {
-        return mImageResourceID != NO_IMAGE_PROVIDED;
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    /**
+     * Returns the string representation of the {@link Word} object.
+     */
+    @NonNull
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
     }
 }
