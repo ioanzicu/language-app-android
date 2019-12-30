@@ -1,5 +1,6 @@
 package android.example.com.miwok;
 
+import android.graphics.Color;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,23 +14,23 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
 
-        ArrayList<Color> colors = new ArrayList<Color>();
+        ArrayList<Word> words = new ArrayList<Word>();
 
-        colors.add(new Color("red", "weṭeṭṭi"));
-        colors.add(new Color("green", "chokokki"));
-        colors.add(new Color("brown", "ṭakaakki"));
-        colors.add(new Color("gray", "ṭopoppi"));
-        colors.add(new Color("black", "kululli"));
-        colors.add(new Color("white", "kelelli"));
-        colors.add(new Color("dusty yellow", "ṭopiisә"));
-        colors.add(new Color("mustard yellow", "chiwiiṭә"));
+        words.add(new Word("red", "weṭeṭṭi"));
+        words.add(new Word("green", "chokokki"));
+        words.add(new Word("brown", "ṭakaakki"));
+        words.add(new Word("gray", "ṭopoppi"));
+        words.add(new Word("black", "kululli"));
+        words.add(new Word("white", "kelelli"));
+        words.add(new Word("dusty yellow", "ṭopiisә"));
+        words.add(new Word("mustard yellow", "chiwiiṭә"));
 
         // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
         // adapter knows how to create layouts for each item in the list, using the
         // simple_list_item_1.xml layout resource defined in the Android framework.
         // This list item layout contains a single {@link TextView}, which the adapter will set to
         // display a single word.
-        ColorAdapter adapter = new ColorAdapter(this, colors);
+        WordAdapter adapter = new WordAdapter(this, words);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the

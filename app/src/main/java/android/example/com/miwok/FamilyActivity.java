@@ -13,25 +13,25 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_members);
 
-        ArrayList<FamilyMember> members = new ArrayList<FamilyMember>();
+        ArrayList<Word> words = new ArrayList<Word>();
 
-        members.add(new FamilyMember("father", "әpә"));
-        members.add(new FamilyMember("mother", "әṭa"));
-        members.add(new FamilyMember("son", "angsi"));
-        members.add(new FamilyMember("daughter", "tune"));
-        members.add(new FamilyMember("older brother", "taachi"));
-        members.add(new FamilyMember("younger brother", "chalitti"));
-        members.add(new FamilyMember("older sister", "teṭe"));
-        members.add(new FamilyMember("younger sister", "kolliti"));
-        members.add(new FamilyMember("grandmother", "ama"));
-        members.add(new FamilyMember("grandfather", "paapa"));
+        words.add(new Word("father", "әpә"));
+        words.add(new Word("mother", "әṭa"));
+        words.add(new Word("son", "angsi"));
+        words.add(new Word("daughter", "tune"));
+        words.add(new Word("older brother", "taachi"));
+        words.add(new Word("younger brother", "chalitti"));
+        words.add(new Word("older sister", "teṭe"));
+        words.add(new Word("younger sister", "kolliti"));
+        words.add(new Word("grandmother", "ama"));
+        words.add(new Word("grandfather", "paapa"));
 
         // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
         // adapter knows how to create layouts for each item in the list, using the
         // simple_list_item_1.xml layout resource defined in the Android framework.
         // This list item layout contains a single {@link TextView}, which the adapter will set to
         // display a single word.
-        FamilyAdapter adapter = new FamilyAdapter(this, members);
+        WordAdapter adapter = new WordAdapter(this, words);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
