@@ -2,4 +2,6 @@
 <resources>
     <!-- Height of each list item -->
     <dimen name="list_item_height">88dp</dimen>
+    <!--    Size for arrow icon-->
+    <dimen name="ic_arrow_size">24dp</dimen>
 </resources>
