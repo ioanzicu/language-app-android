@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;

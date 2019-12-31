@@ -1,6 +1,5 @@
 package android.example.com.miwok;
 
-
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
