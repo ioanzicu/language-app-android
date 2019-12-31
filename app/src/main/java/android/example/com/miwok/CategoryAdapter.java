@@ -1,5 +1,6 @@
 package android.example.com.miwok;
 
+import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -9,6 +10,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * each list item based on a data source which is a list of{@link Word}objects.
  */
 public class CategoryAdapter extends FragmentPagerAdapter {
+
+    final int PAGE_COUNT = 4;
+    private String tabTitles[] = new String[]{"Numbers", "Family", "Colors", "Phrases"};
+    private Context context;
+
     /**
      * Create a new {@link CategoryAdapter} object.
      *
@@ -17,6 +23,20 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      */
     public CategoryAdapter(FragmentManager fm) {
         super(fm);
+    }
+
+    public CategoryAdapter(FragmentManager fm, Context context) {
+        super(fm);
+        this.context = context;
+    }
+
+    /**
+     * Return the {@link Fragment} title that should be displayed for the given page number.
+     */
+    @Override
+    public CharSequence getPageTitle(int position) {
+        // Generate title based on item position
+        return tabTitles[position];
     }
 
     /**
@@ -40,6 +60,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-        return 4;
+        return PAGE_COUNT;
     }
 }
