@@ -119,7 +119,7 @@ public class PhrasesFragment extends Fragment {
         words.add(new Word("I’m feeling good.", "Ich fühle mich gut.", R.raw.phrase_im_feeling_good));
         words.add(new Word("Are you coming?", "Kommst du?", R.raw.phrase_are_you_coming));
         words.add(new Word("Yes, I’m coming.", "Ja, ich komme.", R.raw.phrase_yes_im_coming));
-        words.add(new Word("One second please.", "Eine Sekunde, bitte.", R.raw.phrase_im_coming));
+        words.add(new Word("One second please.", "Eine Sekunde, bitte.", R.raw.phrase_one_second_please));
         words.add(new Word("Let’s go.", "Lass uns gehen.", R.raw.phrase_lets_go));
         words.add(new Word("Come here!", "Komm her!", R.raw.phrase_come_here));
 
