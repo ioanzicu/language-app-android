@@ -5,26 +5,26 @@ import androidx.annotation.NonNull;
 public class Word {
 
     private String mDefaultTranslation;
-    private String mMiwokTranslation;
+    private String mForeignTranslation;
     private int mImageResourceId = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
     private int mAudioResourceId;
 
-    public Word(String defaultTranslation, String miwokTranslation, int soundResourceID) {
-        this.mMiwokTranslation = miwokTranslation;
+    public Word(String defaultTranslation, String foreignTranslation, int soundResourceID) {
+        this.mForeignTranslation = foreignTranslation;
         this.mDefaultTranslation = defaultTranslation;
         this.mAudioResourceId = soundResourceID;
     }
 
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int soundResourceID) {
-        this.mMiwokTranslation = miwokTranslation;
+        this.mForeignTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
         this.mImageResourceId = imageResourceID;
         this.mAudioResourceId = soundResourceID;
     }
 
-    public String getmMiwokTranslation() {
-        return mMiwokTranslation;
+    public String getmForeignTranslation() {
+        return mForeignTranslation;
     }
 
     public String getmDefaultTranslation() {
@@ -54,7 +54,7 @@ public class Word {
     public String toString() {
         return "Word{" +
                 "mDefaultTranslation='" + mDefaultTranslation + '\'' +
-                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mForeignTranslation='" + mForeignTranslation + '\'' +
                 ", mAudioResourceId=" + mAudioResourceId +
                 ", mImageResourceId=" + mImageResourceId +
                 '}';
